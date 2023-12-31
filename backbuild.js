@@ -84,7 +84,7 @@ function Server(){
     console.log(process.argv[3])
     if(process.argv[3]==='mongodb'){
         server = `
-        const app = require('.app')
+        const app = require('./app')
         const dotenv = require('dotenv')
         dotenv.config({path : "./environment/config.env"})
         const DBCONNECTION = mongoose.connect(process.env.CONNECTION).then(el=>{
@@ -97,7 +97,7 @@ function Server(){
         `
     }else{
         server = `
-        const app = require('.app')
+        const app = require('./app')
         const dotenv = require('dotenv')
         dotenv.config({path : "./environment/config.env"})
         const server = app.listen(process.env.PORT, (req, res)=>{
@@ -124,7 +124,11 @@ function Package(){
         "author": "tarsem",
         "license": "ISC",
         "dependencies": {
-          "express": "^4.18.2"
+            "cors": "^2.8.5",
+            "dotenv": "^16.3.1",
+            "express": "^4.18.2",
+            "mongoose": "^8.0.3",
+            "prompt": "^1.3.0"
         }
       }      
     `
