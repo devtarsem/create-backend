@@ -79,6 +79,9 @@ function App(){
 
 function Server(){
     let server;
+    console.log("hell")
+
+    console.log(process.argv[3])
     if(process.argv[3]==='mongodb'){
         server = `
         const app = require('.app')
@@ -115,7 +118,8 @@ function Package(){
         "description": "",
         "main": "index.js",
         "scripts": {
-          "test": "echo \"Error: no test specified\" && exit 1"
+          "test": "echo \"Error: no test specified\" && exit 1",
+          "builder" : "node_modules/create-exp-backend/backbuilder.js"
         },
         "author": "tarsem",
         "license": "ISC",
